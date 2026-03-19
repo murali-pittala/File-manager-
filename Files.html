@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Manager</title>
+    <style>
+        body { font-family: Arial; }
+        nav {
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            padding: 10px;
+            background: #eee;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="dashboard.html">Home</a>
+    <a href="files.html">File Manager</a>
+    <a href="login.html">Logout</a>
+</nav>
+
+<div class="container">
+    <h2>File Manager</h2>
+
+    <input type="text" id="filename" placeholder="Enter file name">
+    <button onclick="addFile()">Add File</button>
+
+    <ul id="fileList"></ul>
+</div>
+
+<script>
+function addFile() {
+    let name = document.getElementById("filename").value;
+    if(name === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = name;
+
+    li.onclick = function() {
+        this.remove();
+    };
+
+    document.getElementById("fileList").appendChild(li);
+    document.getElementById("filename").value = "";
+}
+</script>
+
+</body>
+</html>
