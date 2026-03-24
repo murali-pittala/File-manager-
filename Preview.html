@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preview</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Live Preview</h1>
+
+<textarea id="inputText" rows="5" cols="30" placeholder="Type something..."></textarea>
+<br><br>
+
+<button onclick="showPreview()">Preview</button>
+
+<h2>Output:</h2>
+<div id="previewBox" style="border:1px solid black; padding:10px;"></div>
+
+<br>
+<a href="index.html">Back to Home</a>
+
+<script>
+function showPreview() {
+    let text = document.getElementById("inputText").value;
+    
+    // Show preview
+    document.getElementById("previewBox").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
